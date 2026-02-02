@@ -1,0 +1,152 @@
+/* ---------- COMMON ---------- */
+section {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.btn {
+  padding: 12px 22px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.btn.primary {
+  background: #4f46e5;
+  color: #fff;
+}
+
+.btn.outline {
+  border: 1px solid #4f46e5;
+  color: #4f46e5;
+}
+
+/* ---------- HERO ---------- */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #eef2ff, #f5f7ff);
+}
+
+.hero-content {
+  max-width: 900px;
+}
+
+.hero-badge {
+  display: inline-block;
+  padding: 6px 14px;
+  background: #e0e7ff;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.hero-title {
+  font-size: 42px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.hero-title span {
+  color: #4f46e5;
+}
+
+.hero-text {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.hero-trust {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  font-size: 14px;
+}
+
+/* ---------- FEATURES ---------- */
+.features {
+  background: #fafafa;
+}
+
+.section-title {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.section-title span {
+  color: #4f46e5;
+}
+
+.section-subtitle {
+  max-width: 600px;
+  margin: auto;
+  color: #666;
+}
+
+.features-grid {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+.feature-card {
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.feature-icon {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+/* ---------- CTA ---------- */
+.cta {
+  background: #eef2ff;
+}
+
+.cta-box {
+  max-width: 700px;
+  margin: auto;
+}
+
+.cta-icon {
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+
+.cta p {
+  color: #555;
+  margin-bottom: 25px;
+}
+
+.cta small {
+  display: block;
+  margin-top: 15px;
+  color: #777;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 30px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+  }
+}
