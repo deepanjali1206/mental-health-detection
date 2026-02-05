@@ -1,27 +1,21 @@
 import { useState } from "react";
 import SentimentResults from "./SentimentResults";
 
-// Dummy sentiment analysis function
 const analyzeSentiment = async (text) => {
-  // Simulate API call
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      // Dummy result
-      resolve({
-        sentiment: text.includes("happy") ? "positive" : "negative",
-        confidence: 0.85,
-        indicators: [
-          { type: "stress", label: "Stress detected", score: 60 },
-          { type: "anxiety", label: "Anxiety detected", score: 40 },
-        ],
-        emotions: [
-          { emotion: "Happy", score: 0.6 },
-          { emotion: "Sad", score: 0.3 },
-          { emotion: "Angry", score: 0.1 },
-        ],
-      });
-    }, 1000);
+  const response = await fetch("/api/analyze", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ text }),
   });
+
+  if (!response.ok) {
+    const errorBody = await response.json().catch(() => ({}));
+    throw new Error(errorBody.message || "Something went wrong.");
+  }
+
+  return response.json();
 };
 
 const SentimentAnalyzer = () => {
@@ -42,7 +36,7 @@ const SentimentAnalyzer = () => {
       const analysisResult = await analyzeSentiment(text);
       setResult(analysisResult);
     } catch (err) {
-      setError("Something went wrong.");
+      setError(err.message || "Something went wrong.");
     } finally {
       setLoading(false);
     }
