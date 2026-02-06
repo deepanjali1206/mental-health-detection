@@ -1,12 +1,11 @@
 import { useState } from "react";
 import SentimentResults from "./SentimentResults";
+import "./SentimentAnalyzer.css"; // <-- Import CSS
 
 const analyzeSentiment = async (text) => {
   const response = await fetch("/api/analyze", {
     method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
+    headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ text }),
   });
 
@@ -29,6 +28,7 @@ const SentimentAnalyzer = () => {
       setError("Please enter some text.");
       return;
     }
+
     setError(null);
     setLoading(true);
 
@@ -49,21 +49,33 @@ const SentimentAnalyzer = () => {
   };
 
   return (
-    <div style={{ maxWidth: "600px", margin: "0 auto" }}>
-      <h2>Share Your Thoughts</h2>
+    <div className="sentiment-box">
+      <h2 className="sentiment-title">Share Your Thoughts</h2>
+
       <textarea
+        className="sentiment-input"
         value={text}
         onChange={(e) => setText(e.target.value)}
         placeholder="How are you feeling today?"
-        style={{ width: "100%", minHeight: "100px", padding: "8px", marginBottom: "10px" }}
         disabled={loading}
       />
-      {error && <p style={{ color: "red" }}>{error}</p>}
-      <div style={{ marginBottom: "20px" }}>
-        <button onClick={handleAnalyze} disabled={loading || !text.trim()} style={{ marginRight: "10px" }}>
+
+      {error && <p className="sentiment-error">{error}</p>}
+
+      <div className="sentiment-buttons">
+        <button
+          className="sentiment-btn primary"
+          onClick={handleAnalyze}
+          disabled={loading || !text.trim()}
+        >
           {loading ? "Analyzing..." : "Analyze Mood"}
         </button>
-        {result && <button onClick={handleReset}>Reset</button>}
+
+        {result && (
+          <button className="sentiment-btn outline" onClick={handleReset}>
+            Reset
+          </button>
+        )}
       </div>
 
       {result && <SentimentResults result={result} />}

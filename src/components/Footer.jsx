@@ -48,14 +48,8 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Bottom Bar */}
-      <div className="footer-bottom">
-        <p>
-          © {new Date().getFullYear()} MindfulAI. Not a substitute for professional
-          medical advice.
-        </p>
-        <a href="mailto:support@mindfulai.com">📧 support@mindfulai.com</a>
-      </div>
+      
+      
     </footer>
   );
 };

@@ -5,7 +5,7 @@ const HeroSection = () => {
   return (
     <section className="hero">
       <div className="hero-content">
-        <div className="hero-badge">🤖 AI-Powered Mental Wellness</div>
+        <div className="hero-badge"> AI-Powered Mental Wellness</div>
 
         <h1 className="hero-title">
           Understand Your <span>Emotional State</span>

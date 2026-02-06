@@ -1,36 +1,34 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Header from "../components/Header";
+import Footer from "../components/Footer";
 import "./HowItWorks.css";
 
-import Footer from "../components/Footer";
-
-// Icons (we'll just use emojis for simplicity)
 const steps = [
   {
     icon: "💬",
     number: "01",
     title: "Enter Your Text",
-    description: "Share your thoughts, feelings, or any text you'd like to analyze.",
+    description: "Share your thoughts or feelings you'd like AI to analyze."
   },
   {
     icon: "🧠",
     number: "02",
     title: "NLP Processing",
-    description: "AI analyzes your text for patterns and emotional indicators.",
+    description: "Our AI uses NLP to analyze patterns and emotional signals."
   },
   {
     icon: "🔍",
     number: "03",
     title: "Sentiment Detection",
-    description: "AI identifies sentiment (positive, negative, neutral) and confidence score.",
+    description: "AI identifies the emotional sentiment and confidence score."
   },
   {
     icon: "📊",
     number: "04",
     title: "View Results",
-    description: "See insights including sentiment label, confidence, and mood indicators.",
-  },
+    description: "Get insights like sentiment label and overall mood."
+  }
 ];
 
 const HowItWorks = () => {
@@ -38,16 +36,48 @@ const HowItWorks = () => {
     <div className="page">
       <Header />
 
-      <main className="main">
-        {/* Hero Section */}
-        <section className="hero">
-          <h1>How Sentiment Analysis Works</h1>
-          <p>
-            Our AI uses Natural Language Processing to understand and analyze the emotional content of your text.
-          </p>
-        </section>
+      {/* HERO */}
+<section className="hero">
+  <div className="hero-content">
+    
+    {/* Badge */}
+    <div className="hero-badge">💡 How It Works</div>
 
-        {/* Steps */}
+    {/* Main Title */}
+    <h1 className="hero-title">
+      How <span>Sentiment Analysis</span> Works
+    </h1>
+
+    {/* Description */}
+    <p className="hero-text">
+      Our AI decodes emotions using advanced Natural Language Processing (NLP)
+      to give clear, meaningful, and accurate emotional insights instantly.
+    </p>
+
+    {/* Info Strip */}
+    <div className="info-strip">
+      <div className="info-chip">
+        <span className="chip-icon">⚡</span>Fast Results
+      </div>
+
+      <div className="info-chip">
+        <span className="chip-icon">🔒</span>Private & Secure
+      </div>
+
+      <div className="info-chip">
+        <span className="chip-icon">🤖</span>AI Powered
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+      {/* STEPS WRAPPER */}
+      <div className="steps-wrapper">
+        <h2 className="section-title">4 Simple Steps</h2>
+
         <section className="steps">
           {steps.map((step) => (
             <div key={step.number} className="step-card">
@@ -61,15 +91,15 @@ const HowItWorks = () => {
 
         {/* CTA */}
         <section className="cta">
-          <h2>Ready to Try It Yourself?</h2>
-          <p>Experience AI-powered sentiment analysis. It's free and private.</p>
+          <h2>Ready to Try It?</h2>
+          <p>Experience emotion detection instantly. Fast, free & private.</p>
           <Link to="/analyze">
             <button className="btn-primary">Analyze Your Mood ➜</button>
           </Link>
         </section>
-      </main>
+      </div>
 
-   
+    
     </div>
   );
 };

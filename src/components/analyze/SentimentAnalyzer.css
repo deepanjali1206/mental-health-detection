@@ -1,0 +1,105 @@
+/* ---- MAIN CARD ---- */
+.sentiment-box {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  margin-top: 20px;
+  transition: 0.3s ease;
+}
+
+.sentiment-box:hover {
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+/* ---- TITLE ---- */
+.sentiment-title {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+/* ---- TEXT AREA ---- */
+.sentiment-input {
+  width: 100%;
+  min-height: 120px;
+  border-radius: 12px;
+  padding: 14px;
+  font-size: 15px;
+  border: 1px solid #d1d5db;
+  outline: none;
+  resize: vertical;
+  background: #f9f9ff;
+  transition: 0.25s ease;
+}
+
+.sentiment-input:focus {
+  border-color: #6366f1;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+}
+
+/* ---- ERROR ---- */
+.sentiment-error {
+  color: #e11d48;
+  margin-top: 6px;
+  margin-bottom: -10px;
+  font-size: 14px;
+}
+
+/* ---- BUTTON AREA ---- */
+.sentiment-buttons {
+  margin-top: 20px;
+  display: flex;
+  gap: 12px;
+}
+
+/* ---- BUTTONS ---- */
+.sentiment-btn {
+  padding: 10px 18px;
+  border-radius: 10px;
+  font-size: 15px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.25s ease;
+  border: none;
+}
+
+.sentiment-btn.primary {
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  color: white;
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+}
+
+.sentiment-btn.primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 7px 18px rgba(79, 70, 229, 0.4);
+}
+
+.sentiment-btn.primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.sentiment-btn.outline {
+  background: white;
+  border: 2px solid #6366f1;
+  color: #6366f1;
+}
+
+.sentiment-btn.outline:hover {
+  background: #6366f1;
+  color: white;
+}
+
+/* ---- MOBILE ---- */
+@media (max-width: 600px) {
+  .sentiment-box {
+    padding: 22px;
+  }
+
+  .sentiment-buttons {
+    flex-direction: column;
+  }
+}
